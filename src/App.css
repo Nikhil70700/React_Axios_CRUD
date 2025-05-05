@@ -42,7 +42,7 @@
   
   /* Card Styles */
   .card {
-    background:#fff;
+    background: rgba(33, 47, 61, 0.9);
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
                 rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
@@ -70,7 +70,7 @@
   
   .card .body {
     font-size: 1.5rem;
-    color: #222121;
+    color: #f0f0f0;
     flex-grow: 1;
   }
   
