@@ -1,4 +1,3 @@
-/* Reset & Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -21,8 +20,6 @@
     line-height: 1.5;
     color: #fff;
   }
-  
-  /* Section Container */
   .section-post {
     width: 100%;
     padding: 3rem 1.5rem;
@@ -33,7 +30,7 @@
   
   .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     width: 100%;
     max-width: 1200px;
@@ -54,11 +51,11 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: 220px;
+    
   }
-  
   .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 16px 32px rgba(0, 255, 174, 0.4);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   }
   
   .card .title {
@@ -66,12 +63,21 @@
     font-weight: 600;
     color: #00ffae;
     margin-bottom: 1rem;
+    text-transform: capitalize;
+    text-align: center;
+    /* height: 15rem; */
+    display: flex;
+    justify-content: center; 
+    align-items: center;
   }
   
   .card .body {
     font-size: 1.5rem;
     color: #f0f0f0;
     flex-grow: 1;
+    /* height: 20rem; */
+    text-align: justify;
+    
   }
   
   /* Buttons */
@@ -100,8 +106,12 @@
   .card .btn-delete:hover {
     background-color: #c0392b;
   }
+  .btn-parent{
+    display: flex;
+    justify-content: space-between;
+  }
   
-  /* Responsive Typography */
+  /* Responsive */
   @media screen and (max-width: 600px) {
     html {
       font-size: 56.25%;
@@ -113,10 +123,60 @@
   
     .card .title {
       font-size: 1.8rem;
+      /* text-transform: uppercase; */
     }
   
     .card .body {
       font-size: 1.4rem;
     }
+  }
+  
+  form {
+    padding: 2.5rem;
+    border-radius: 1rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid white;
+  }
+
+  
+  form input {
+    padding: 1rem 1.5rem;
+    font-size: 1.6rem;
+    background-color: #ffffff;
+    color: #010101;
+    border: none;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: border 0.3s ease;
+  }
+  
+  form input::placeholder {
+    color: #454444;
+  }
+  
+  form input:focus {
+    border: 2px solid #067ef6;
+  }
+  
+  form button {
+    align-self: flex-start;
+    padding: 1.2rem 3rem;
+    font-size: 2rem;
+    border: none;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    background-color: #cc3838;
+    color: #ffffff;
+    transition: background-color 0.3s ease;
+}
+  
+  form button:hover {
+    background-color: #6704f1d8;
   }
   
