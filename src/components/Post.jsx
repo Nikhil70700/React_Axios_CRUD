@@ -18,25 +18,25 @@ const Post = () => {
     getPostData();
   }, []);
 
-  return <section className='section-post'>
-    <ol>
-      {
-        data.map((curElem) => {
-          const { id, body, title } = curElem;
-          return (
-            <li key={id}>
-              <p>Title:{title}</p>
-
-              <p>Body:{body}</p>
-              <button>Edit</button>
-              <button className='btn-delete'>Delete</button>
-
-            </li>
-          )
-        })
-      }
-    </ol>
-  </section>
+  return<section className="section-post">
+  <div className="card-grid">
+    {data.map(({ id, title, body }) => (
+      <div className="card" key={id}>
+        <div className="card-info">
+          <div>
+            <p className="title">{title}</p>
+            <p className="body">{body}</p>
+            <div className='btn-parent'>
+            <button>Edit</button>
+            <button className="btn-delete">Delete</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 }
 
 export default Post
