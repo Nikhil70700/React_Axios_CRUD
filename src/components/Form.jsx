@@ -42,19 +42,23 @@ export const Form = ({ data, setData, updateDataApi, setUpdateDataApi }) => {
             const res = await updateData(updateDataApi.id, addData)
             console.log(res);
 
-            setData((prev)=>{
-                console.log(prev)
-            })
+            if (res.status === 200) {
+                setData((prev) => {
+                    return prev.map((curElem) => {
+                        return curElem.id === res.data.id  ? res.data : curElem;
+                    });
+                });
+            }
+
         } catch (error) {
             console.log(error);
-
         }
     };
 
-    // FOrm Submission
+    // Form Submission
     const handleFormData = (e) => {
         e.preventDefault();
-        const action = e.nativeElement.submitter.value;
+        const action=e.nativeEvent.submitter.value;
         if (action === "Add") {
             addPostData();
         } else if (action === "Edit") {
