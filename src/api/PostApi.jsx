@@ -24,6 +24,12 @@ export const postData=(post)=>{
 }
 
 
+// PUT method
+
+export const updateData=(id,post)=>{
+  return api.put(`/posts${id}`,post);
+};
+
 
 
 
